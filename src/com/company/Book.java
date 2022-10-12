@@ -28,7 +28,7 @@ public class Book {
     }
 
 
-    public String print(Book carte){
+    public String print(){
         System.out.println("      " + name);
         for (String e:contents){
             System.out.println(e);

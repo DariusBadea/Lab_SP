@@ -18,11 +18,11 @@ public class Chapter {
     }
 
     public SubChapter getSubChapter(int index){
-        SubChapter subchapter = new SubChapter(contents.get(index));
+        SubChapter subchapter = new SubChapter(contents.get(index).name);
         return subchapter;
     }
 
-    public String print(Book carte){
+    public String print(){
         System.out.println("      " + name);
         for (SubChapter e:contents){
             System.out.println(e);

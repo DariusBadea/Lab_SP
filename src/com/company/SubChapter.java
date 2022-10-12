@@ -14,17 +14,17 @@ public class SubChapter {
         this.name = name;
     }
 
-    public void createNewParagraph(Paragraph pn){
-        this.contents.add(pn.text);
+    public void createNewParagraph(String pn){
+        this.contents.add(pn);
     }
-    public void createNewImage(Image in){
-        this.contents.add(in.imageName);
+    public void createNewImage(String in){
+        this.contents.add(in);
     }
-    public void createNewTable(Table tn){
-        this.contents.add(tn.title);
+    public void createNewTable(String tn){
+        this.contents.add(tn);
     }
 
-    public String print(Book carte){
+    public String print(){
         System.out.println("      " + name);
         for (String e:contents){
             System.out.println(e);
