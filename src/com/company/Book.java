@@ -5,23 +5,32 @@ import java.util.List;
 
 public class Book {
     public String name;
-    public List<String> pagina = new ArrayList<String>();
+    public String author;
+
+    public List<String> contents = new ArrayList<String>();
 
     public Book(String nume){
         this.name = nume;
     }
 
-    public void createNewParagraph(String Title_paragraph){
-        pagina.add(Title_paragraph);}
+    public void addAuthor(Author autor){
+        this.author = autor.name;
+    }
 
-    public void createNewImage(String link_image){
-        pagina.add(link_image);}
+    public int createChapter(String nameOfChapter){
+        contents.add(nameOfChapter);
+        return contents.indexOf(nameOfChapter);
+    }
 
-    public void createNewTable(String table_link){ pagina.add(table_link);}
+    public Chapter getChapter(int index){
+        Chapter chapter = new Chapter(contents.get(index));
+        return chapter;
+    }
+
 
     public String print(Book carte){
         System.out.println("      " + name);
-        for (String e:pagina){
+        for (String e:contents){
             System.out.println(e);
         }
         return " ";
