@@ -3,13 +3,14 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book {
+public class Book extends Section {
     public String name;
     public String author;
 
-    public List<String> contents = new ArrayList<String>();
+    public List<Element> contents = new ArrayList<Element>();
 
     public Book(String nume){
+        super(nume);
         this.name = nume;
     }
 
@@ -17,22 +18,17 @@ public class Book {
         this.author = autor.name;
     }
 
-    public int createChapter(String nameOfChapter){
-        contents.add(nameOfChapter);
-        return contents.indexOf(nameOfChapter);
-    }
-
-    public Chapter getChapter(int index){
-        Chapter chapter = new Chapter(contents.get(index));
-        return chapter;
-    }
-
-
-    public String print(){
+    public void print(){
         System.out.println("      " + name);
-        for (String e:contents){
-            System.out.println(e);
+        System.out.println(author);
+        System.out.println(" ");
+        for (Element e:contents){
+            e.print();
         }
-        return " ";
     }
+
+    public void addContent(Element x) {
+    contents.add(x);
+    }
+
 }
